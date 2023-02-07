@@ -1,0 +1,22 @@
+server:
+  port: 8093
+  servlet:
+    context-path: /postgresql
+
+spring:
+  datasource:
+    # postgresql
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/test
+    username: postgres
+    password: root
+    # mysql
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3307/test?serverTimezone=Asia/Shanghai
+#    username: root
+#    password: 123456
+
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true # 加了此配置，可以直接写原生 SQL，否则要别名成实体类属性名
