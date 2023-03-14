@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PostgresqlMapper {
 
-    @Insert("insert into emq_message(time, message) values (now(), 'msg')")
-    void insertEmqMessage();
+    @Insert("insert into emq_message values (#{id}, now(), 'msg')")
+    void insertEmqMessage(Integer id);
 
 }

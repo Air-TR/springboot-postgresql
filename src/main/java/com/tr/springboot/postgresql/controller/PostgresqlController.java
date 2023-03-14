@@ -30,8 +30,8 @@ public class PostgresqlController {
     @GetMapping("/test/insert/performance/{insertNum}")
     public String testInsertPerformance(@PathVariable Integer insertNum) {
         long start = System.currentTimeMillis();
-        for (int i = 0; i < insertNum; i++) {
-            postgresqlMapper.insertEmqMessage();
+        for (int i = 1; i <= insertNum; i++) {
+            postgresqlMapper.insertEmqMessage(i);
         }
         return "Postgresql-insert 性能：insert " + insertNum + "条，耗时：" + (System.currentTimeMillis() - start) + " ms";
     }
